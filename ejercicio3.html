@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3</title>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h2>
+        Resultado: <span class="resultado"></span>
+      </h2>
+      <div>
+        <div>
+          <div>
+            <label for="">Valor 1</label>
+            <input id="valor1" type="text">
+          </div>
+          <div>
+            <label for="">Valor 2</label>
+            <input id="valor2" type="text">
+          </div>
+          <div style="display: flex">
+            <button id="btn-sumar" type="button"> Sumar</button>
+            <button id="btn-restar" type="button"> Restar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const sumar = (n1, n2) => {
+      let suma = n1 + n2;
+      return suma;
+    };
+    const restar = (n1, n2) => {
+      let resta = n1 - n2;
+      return resta;
+    };
+    let sumando = document.getElementById("btn-sumar");
+    sumando.addEventListener("click", function(n1, n2) {
+      let numero1 = +document.getElementById("valor1").value;
+      let numero2 = +document.getElementById("valor2").value;
+      document.querySelector(".resultado").innerHTML = `${sumar(numero1, numero2)}`;
+    });
+
+    let restando = document.getElementById("btn-restar");
+    restando.addEventListener("click", function(n1, n2) {
+      let numero1 = +document.getElementById("valor1").value;
+      let numero2 = +document.getElementById("valor2").value;
+      if (restar(numero1, numero2) < 0) {
+        document.querySelector(".resultado").innerHTML = "0";
+      } else {
+        document.querySelector(".resultado").innerHTML = `${restar(numero1, numero2)}`;
+      }
+    });
+  </script>
+</body>
+
+</html>
