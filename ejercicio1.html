@@ -69,17 +69,17 @@
     function validar(nombre, asunto, mensaje) {
       let pasamosLaValidacion = true;
 
-      let validacionNombre = /[a-zA-Z]/gim
+      let validacionNombre = /^[a-zA-Z]+$/gim
       if (validacionNombre.test(nombre) == false) {
         document.querySelector(".errorNombre").innerHTML = "El nombre es requerido"
         pasamosLaValidacion = false;
       }
-      let validacionasunto = /[a-zA-Z]/gim
+      let validacionasunto = /^[a-zA-Z]+$/gim
       if (validacionasunto.test(asunto) == false) {
         document.querySelector(".errorAsunto").innerHTML = "El asunto es requerido"
         pasamosLaValidacion = false;
       }
-      let validacionmensaje = /[a-zA-Z]/gim
+      let validacionmensaje = /^[a-zA-Z]+$/gim
       if (validacionmensaje.test(mensaje) == false) {
         document.querySelector(".errorMensaje").innerHTML = "El mensaje es requerido"
         pasamosLaValidacion = false;
